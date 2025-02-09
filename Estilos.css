@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#totality{
+  width: 100%;
+  height: 85vh;
+  display: flex;
+}
+
+#divisionuno{
+    height: 100%;
+    width: 50%;
+    background: url(zendaya.jpg) ;
+    background-repeat:round;
+}
+
+#divisiondos{
+    height: 100%;
+    width: 50%;
+    background: url(diseño3.png) ;
+    background-repeat:round;
+}
+
+.negro{
+    background-color: rgba(0, 0, 0, 0.550);
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+#divisionuno:hover{
+    width: 52%;
+    transition: 0.5s;
+}
+
+#divisiondos:hover{
+    width: 52%;
+    transition: 0.5s;
+}
+
+.negro:hover{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+header > .logo{
+    width: 20%;
+    min-width: 200px;
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconitos{
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+header{
+    height: 15vh;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.centado{
+    position: relative;
+    top: 90%;
+    text-align: center;
+    font-size: xx-large;
+    color: white;
+}
+
+
+@media (max-width: 1000px) {
+    #totality{
+    display:block;
+    }
+    #divisionuno{
+        height: 100%;
+        width: 100%;
+    }
+    
+    #divisiondos{
+        height: 100%;
+        width: 100%;
+    }
+
+    .negro{
+        background-color: rgba(0, 0, 0, 0);
+        height: 100%;
+        width: 100%;
+    }
+    
+    #divisionuno:hover{
+        height: 100%;
+        width: 100%;
+        background: url(zendaya.jpg) ;
+        background-repeat:round;
+    }
+
+    #divisiondos:hover{
+        height: 100%;
+        width: 100%;
+        background: url(diseño3.png) ;
+        background-repeat:round;
+    }
+}
