@@ -4,23 +4,32 @@
     padding: 0;
 }
 
+body{
+    background-color: #FFFDE2;
+}
+
+a:link, a:visited {
+    color: rgb(15, 15, 15);
+    text-decoration: none; /* Elimina el subrayado */
+}
+
 #totality{
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
 }
 
 #divisionuno{
     height: 100%;
     width: 50%;
-    background: url(zendaya.jpg) ;
+    background: url(diseño3.png) ;
     background-repeat:round;
 }
 
 #divisiondos{
     height: 100%;
     width: 50%;
-    background: url(diseño3.png) ;
+    background: url(zendaya.jpg) ;
     background-repeat:round;
 }
 
@@ -46,8 +55,8 @@
 }
 
 .logo{
-    width: 20%;
-    min-width: 200px;
+    width: 40%;
+    min-width: 150px;
     display: block;
     align-self: center;
     margin-left: auto;
@@ -56,24 +65,65 @@
 
 .iconitos{
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 10px;
 }
 
 header{
-    height: 10vh;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    background-color: #D8C9B6;
+    z-index: 100;
+}
+
+#cabecera_central{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    position: sticky;
-    top: 0;
+}
+
+#cabecera_inferior{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#cabecera_inferior > div > img{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+
+#cabecera_inferior > div > p{
+    display: inline;
+}
+
+#niño1{
+    text-align: start;
+}
+
+#niño2{
+    text-align: end;
+}
+
+#cabecera_inferior > div{
+    align-content: center;
 }
 
 .centado{
     position: relative;
-    top: 90%;
+    top: 60%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
     text-align: center;
-    font-size: xx-large;
-    color: white;
+    font-size: larger;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #D8C9B6;
+    border-radius: 20px;
 }
 
 .grid {
@@ -95,6 +145,24 @@ header{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+#conIconos{
+display: flex;
+justify-content: flex-end;
+text-align: center;
+}
+
+#navinicial{
+    text-align:right;
+    display: flex; 
+    justify-content: flex-end;
+}
+
+#navinicial > *{
+    font-size: larger;
+}
+
+
+
 @media (max-width: 1000px) {
     #totality{
     display:block;
@@ -107,6 +175,8 @@ header{
     #divisiondos{
         height: 100%;
         width: 100%;
+        background: url(zendaya2.jpg) ;
+        background-repeat:round;
     }
 
     .negro{
@@ -114,18 +184,37 @@ header{
         height: 100%;
         width: 100%;
     }
+
+    .centado{
+        top: 50%;
+    }
     
     #divisionuno:hover{
         height: 100%;
         width: 100%;
-        background: url(zendaya.jpg) ;
+        background: url(diseño3.png) ;
         background-repeat:round;
     }
 
     #divisiondos:hover{
         height: 100%;
         width: 100%;
-        background: url(diseño3.png) ;
+        background: url(zendaya2.jpg) ;
         background-repeat:round;
+    }
+
+    .iconitos{
+        display: block;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .iconitos{
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-top: 15px;
     }
 }
