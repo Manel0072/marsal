@@ -1,3 +1,5 @@
+/* --------------------------cosas generales------------------------- */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -12,6 +14,89 @@ a:link, a:visited {
     color: rgb(15, 15, 15);
     text-decoration: none; /* Elimina el subrayado */
 }
+
+/* --------------------------cosas compartidas (cabecera) ------------------------- */
+
+
+.logo{
+    width: 40%;
+    min-width: 150px;
+    display: block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.iconitos{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+header{
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    background-color: #D8C9B6;
+    z-index: 100;
+}
+
+#cabecera_central{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#cabecera_inferior{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#cabecera_inferior > div > img{
+    display: inline;
+    height: 18px;
+    width: 18px;
+}
+
+#cabecera_inferior > div > p{
+    display: inline;
+}
+
+#niño1{
+    text-align: start;
+}
+
+#niño2{
+    text-align: end;
+}
+
+#cabecera_inferior > div{
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+
+#conIconos{
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+#navinicial{
+    text-align:right;
+    display: flex; 
+    justify-content: flex-end;
+}
+
+#navinicial > *{
+    font-size: larger;
+}
+
+
+/* --------------------------pagina principal------------------------- */
 
 #totality{
   width: 100%;
@@ -54,64 +139,6 @@ a:link, a:visited {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.logo{
-    width: 40%;
-    min-width: 150px;
-    display: block;
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.iconitos{
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    margin-top: 10px;
-}
-
-header{
-    width: 100%;
-    height: auto;
-    position: fixed;
-    top: 0;
-    background-color: #D8C9B6;
-    z-index: 100;
-}
-
-#cabecera_central{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-#cabecera_inferior{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-#cabecera_inferior > div > img{
-    display: inline;
-    height: 18px;
-    width: 18px;
-}
-
-#cabecera_inferior > div > p{
-    display: inline;
-}
-
-#niño1{
-    text-align: start;
-}
-
-#niño2{
-    text-align: end;
-}
-
-#cabecera_inferior > div{
-    align-content: center;
-}
-
 .centado{
     position: relative;
     top: 60%;
@@ -119,17 +146,20 @@ header{
     margin-left: 25%;
     margin-right: 25%;
     text-align: center;
-    font-size: larger;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-size:x-large;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #D8C9B6;
     border-radius: 20px;
 }
+
+/* --------------------------pagina productos------------------------- */
 
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     background-color: #ffffff;
+    margin: 20px;
 }
 
 .caja {
@@ -141,29 +171,23 @@ header{
     border: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
     padding: 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
 }
 
-#conIconos{
-display: flex;
-justify-content: flex-end;
-text-align: center;
+.caja:hover{
+    background-color: rgba(255, 251, 225, 0.8);
+    transition: 0.5s;
 }
 
-#navinicial{
-    text-align:right;
-    display: flex; 
-    justify-content: flex-end;
-}
-
-#navinicial > *{
-    font-size: larger;
+.caja > img{
+    width: 80%;
 }
 
 
 
-@media (max-width: 1000px) {
+
+@media (max-width: 800px) {
     #totality{
     display:block;
     }
@@ -210,11 +234,20 @@ text-align: center;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .iconitos{
         display: block;
         width: 20px;
         height: 20px;
-        margin-top: 15px;
+        margin-top: 20px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .caja > button {
+        height: 30px;
+        width: 150px;
     }
 }
