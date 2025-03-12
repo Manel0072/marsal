@@ -55,13 +55,13 @@ header{
     grid-template-columns: repeat(2, 1fr);
 }
 
-#cabecera_inferior > div > img{
+#cabecera_inferior > div > a > img{
     display: inline;
     height: 18px;
     width: 18px;
 }
 
-#cabecera_inferior > div > p{
+#cabecera_inferior > div > a > p{
     display: inline;
 }
 
