@@ -43,6 +43,7 @@ header{
     top: 0;
     background-color: #D8C9B6;
     z-index: 100;
+    padding: 5px;
 }
 
 #cabecera_central{
@@ -93,6 +94,14 @@ header{
 
 #navinicial > *{
     font-size: larger;
+}
+
+h1{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
 }
 
 
@@ -184,7 +193,27 @@ header{
     width: 80%;
 }
 
+#panfletos{
+    margin-top: 18vh;
+}
 
+#mainproductos{
+    margin-top: 18vh;
+}
+
+.informativo {
+    background-color: #D8C9B6;
+    margin: 5px;
+}
+
+.informativo > h3 {
+    background-color: #dbbd94;
+}
+
+.informativo > p {
+    font-size: large;
+    padding: 5px;
+}
 
 
 @media (max-width: 800px) {
@@ -251,3 +280,4 @@ header{
         width: 150px;
     }
 }
+
