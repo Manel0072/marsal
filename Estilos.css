@@ -193,12 +193,17 @@ h2{
     width: 80%;
 }
 
+.caja > button {
+    height: 20px;
+    width: 100px;
+}
+
 #panfletos{
-    margin-top: 18vh;
+    margin-top: 10rem;
 }
 
 #mainproductos{
-    margin-top: 18vh;
+    margin-top: 10rem;
 }
 
 .informativo {
@@ -219,6 +224,14 @@ h2{
     height: 60px;
     width: 60px;
     padding: 5px;
+}
+
+#cara{
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    align-items: center;
 }
 
 @media (max-width: 800px) {
