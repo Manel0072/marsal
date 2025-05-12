@@ -20,8 +20,6 @@
               <div></div>
               <div><a href="index.html"><img src="imagenes/logo_marsal.png" class="logo" /></a></div>
               <div id="conIconos">
-                <img src="imagenes/lupa.png" class="iconitos" />
-                <img src="imagenes/perfil.png" class="iconitos" />
                 <img src="imagenes/corazon.png" class="iconitos" />
                 <img src="imagenes/carrito.png" class="iconitos" />
               </div>
@@ -39,7 +37,7 @@
                   <img src="Bolsos/nuevo_cocodrilo.jpeg">
                   <p>novedad en piel de cocodrilo</p>
                   <p>400,49 €</p>
-                  <button> Comprar </button>
+                  <button onclick="AlCarrito('Bolso de cocodrilo nuevo', 400,49)">Añadir al carrito</button>
                 </div>
                 <div class="caja">
                   <img src="Bolsos/nuevo_leopardo.jpeg">
@@ -62,6 +60,18 @@
               </div>
           </div>
         </main>
+
+        <div class="carrito">
+          <h2>Carrito</h2>
+          <ul id="lista-carrito"></ul>
+          <p>Total: <span id="total">0.00</span> €</p>
+          <button id="vaciar-carrito" class="btn-vaciar">Vaciar carrito</button>
+        </div>
+        
+        
+        
+        <script src="carrito.js"></script>
+
     </body>
 </html>
 
