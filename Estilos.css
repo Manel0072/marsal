@@ -1284,3 +1284,130 @@ footer {
         padding: 10px 20px;
     }
 }
+
+/* ----------- Sección Acerca de ----------- */
+#acerca-de, .acerca-de, .acerca-section {
+  max-width: 900px;
+  margin: 120px auto 40px auto; /* margen superior extra para header fijo */
+  background: #fffde2;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(216, 201, 182, 0.13);
+  padding: 2.5rem 2rem;
+  color: #3A2F23;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+#acerca-de h1, .acerca-de h1 {
+  font-size: 2.2rem;
+  color: #3A2F23;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+#acerca-de h2, .acerca-de h2 {
+  font-size: 1.5rem;
+  color: #a9987e;
+  margin-top: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+#acerca-de h3, .acerca-de h3 {
+  font-size: 1.1rem;
+  color: #d8c9b6;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+#acerca-de p, .acerca-de p, .acerca-de li {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #3A2F23;
+}
+
+.acerca-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.acerca-card {
+  flex: 1 1 220px;
+  background: #f6f9f7;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(216, 201, 182, 0.09);
+  padding: 1.5rem 1.2rem;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.acerca-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(216, 201, 182, 0.16);
+}
+
+.acerca-card h3 {
+  color: #a9987e;
+  font-size: 1.08rem;
+  margin-bottom: 0.6rem;
+}
+
+.acerca-card p {
+  font-size: 0.98rem;
+  color: #3A2F23;
+  margin-bottom: 0;
+}
+
+#acerca-de ul {
+  list-style: disc inside;
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+#acerca-de strong {
+  color: #a9987e;
+}
+
+/* Contacto */
+#acerca-de .contacto {
+  background: #dbbd94;
+  border-radius: 8px;
+  padding: 1.1rem 1rem;
+  margin-top: 2rem;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(216, 201, 182, 0.09);
+}
+
+#acerca-de .contacto strong {
+  color: #3A2F23;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  #acerca-de, .acerca-de, .acerca-section {
+    padding: 1.2rem 0.7rem;
+    margin-top: 95px;
+  }
+  .acerca-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .acerca-card {
+    max-width: 100%;
+    min-width: 0;
+    padding: 1rem 0.7rem;
+  }
+  #acerca-de h1, .acerca-de h1 {
+    font-size: 1.5rem;
+  }
+  #acerca-de h2, .acerca-de h2 {
+    font-size: 1.15rem;
+  }
+}
