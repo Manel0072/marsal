@@ -1,5 +1,7 @@
-// Script mejorado para gestionar el popup de suscripción
+// Script modificado para garantizar que el modal de suscripción se muestre correctamente
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('Script de suscripción cargado correctamente'); // Para debugging
+    
     // Comprobar si el script ya se ha ejecutado para evitar duplicados
     if (document.getElementById('subscription-modal')) {
         console.warn('El modal de suscripción ya existe en el DOM');
@@ -46,10 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeButton = document.getElementById('modal-close');
     const subscriptionForm = document.getElementById('modal-subscription-form');
     
-    // Comprobar si el usuario ya ha visto el modal (usando localStorage con try-catch para manejar errores)
+    // CAMBIO CLAVE: Resetear siempre el localStorage para pruebas
+    // Descomenta esto solo para pruebas
+    // localStorage.removeItem('hasSeenSubscriptionModal');
+    
+    // Comprobar si el usuario ya ha visto el modal
     let hasSeenModal = false;
     try {
         hasSeenModal = localStorage.getItem('hasSeenSubscriptionModal') === 'true';
+        console.log('Estado del modal en localStorage:', hasSeenModal ? 'Ya visto' : 'No visto');
     } catch (error) {
         console.error('Error al acceder a localStorage:', error);
     }
@@ -57,16 +64,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Variable para controlar si el modal está activo
     let isModalActive = false;
     
+    // CAMBIO IMPORTANTE: Forzar la apertura del modal independientemente de localStorage (para pruebas)
+    // Comenta esta línea después de verificar que funciona
+    hasSeenModal = false;
+    
     // Si el usuario no ha visto el modal antes, mostrarlo después de un retraso
     if (!hasSeenModal) {
+        console.log('Programando apertura del modal en 2 segundos...');
         // Usar setTimeout con un ID para poder cancelarlo si es necesario
         const modalTimerId = setTimeout(() => {
+            console.log('Ejecutando apertura del modal');
             openModal();
         }, 2000); // Mostrar después de 2 segundos
     }
     
     // Función para abrir el modal
     function openModal() {
+        console.log('Abriendo modal');
         if (!isModalActive) {
             modal.classList.add('active');
             isModalActive = true;
@@ -84,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Función para cerrar el modal
     function closeModal() {
+        console.log('Cerrando modal');
         if (isModalActive) {
             modal.classList.remove('active');
             isModalActive = false;
@@ -94,6 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Marcar como visto en localStorage con manejo de errores
             try {
                 localStorage.setItem('hasSeenSubscriptionModal', 'true');
+                console.log('Modal marcado como visto en localStorage');
             } catch (error) {
                 console.error('Error al escribir en localStorage:', error);
             }
@@ -110,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners para cerrar el modal
     if (closeButton) {
         closeButton.addEventListener('click', closeModal);
+        console.log('Listener de cierre añadido al botón');
     }
     
     // Cerrar el modal al hacer clic fuera del contenedor
@@ -129,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (subscriptionForm) {
         subscriptionForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Formulario enviado');
             
             const emailInput = document.getElementById('modal-email');
             const email = emailInput ? emailInput.value.trim() : '';
@@ -148,42 +166,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('userEmail', email);
                 localStorage.setItem('acceptCookies', acceptCookies);
                 localStorage.setItem('acceptMarketing', acceptMarketing);
+                console.log('Preferencias guardadas en localStorage');
             } catch (error) {
                 console.error('Error al guardar preferencias:', error);
             }
             
-            // Ejemplo de cómo se podría enviar datos a un servidor con fetch
-            /*
-            fetch('https://tudominio.com/api/suscripcion', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: email,
-                    acceptCookies: acceptCookies,
-                    acceptMarketing: acceptMarketing
-                })
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error en la respuesta del servidor');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Éxito:', data);
-                showConfirmation(email);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Hubo un problema al procesar tu suscripción. Por favor, inténtalo de nuevo más tarde.');
-            });
-            */
-            
             // Por ahora, solo mostrar confirmación
             showConfirmation(email);
         });
+        console.log('Listener añadido al formulario');
     }
     
     // Función para mostrar confirmación
@@ -239,4 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         open: openModal,
         close: closeModal
     };
+    
+    // NUEVO: Botón para abrir el modal manualmente desde la consola o por código
+    console.log('Para abrir el modal manualmente, ejecuta: window.MARSAL.subscriptionModal.open()');
 });
