@@ -1,6 +1,6 @@
-// Script modificado para garantizar que el modal de suscripción se muestre correctamente
+// Script modificado para garantizar que el modal de suscripción se muestre SOLO en la primera visita
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Script de suscripción cargado correctamente'); // Para debugging
+    console.log('Script de suscripción cargado correctamente');
     
     // Comprobar si el script ya se ha ejecutado para evitar duplicados
     if (document.getElementById('subscription-modal')) {
@@ -48,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeButton = document.getElementById('modal-close');
     const subscriptionForm = document.getElementById('modal-subscription-form');
     
-    // CAMBIO CLAVE: Resetear siempre el localStorage para pruebas
-    // Descomenta esto solo para pruebas
-    // localStorage.removeItem('hasSeenSubscriptionModal');
-    
     // Comprobar si el usuario ya ha visto el modal
     let hasSeenModal = false;
     try {
@@ -64,14 +60,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Variable para controlar si el modal está activo
     let isModalActive = false;
     
-    // CAMBIO IMPORTANTE: Forzar la apertura del modal independientemente de localStorage (para pruebas)
-    // Comenta esta línea después de verificar que funciona
-    hasSeenModal = false;
+    // CAMBIO IMPORTANTE: Ahora respetamos el valor de localStorage
+    // Se eliminaron las líneas que forzaban hasSeenModal = false
     
     // Si el usuario no ha visto el modal antes, mostrarlo después de un retraso
     if (!hasSeenModal) {
         console.log('Programando apertura del modal en 2 segundos...');
-        // Usar setTimeout con un ID para poder cancelarlo si es necesario
         const modalTimerId = setTimeout(() => {
             console.log('Ejecutando apertura del modal');
             openModal();
@@ -228,9 +222,18 @@ document.addEventListener('DOMContentLoaded', function() {
     window.MARSAL = window.MARSAL || {};
     window.MARSAL.subscriptionModal = {
         open: openModal,
-        close: closeModal
+        close: closeModal,
+        // Función para resetear el estado (útil para pruebas)
+        reset: function() {
+            try {
+                localStorage.removeItem('hasSeenSubscriptionModal');
+                console.log('Estado del modal reseteado. En la próxima carga de página aparecerá de nuevo.');
+            } catch (error) {
+                console.error('Error al resetear estado del modal:', error);
+            }
+        }
     };
     
-    // NUEVO: Botón para abrir el modal manualmente desde la consola o por código
-    console.log('Para abrir el modal manualmente, ejecuta: window.MARSAL.subscriptionModal.open()');
+    console.log('Para abrir el modal manualmente: window.MARSAL.subscriptionModal.open()');
+    console.log('Para resetear el estado y que aparezca en la próxima visita: window.MARSAL.subscriptionModal.reset()');
 });
