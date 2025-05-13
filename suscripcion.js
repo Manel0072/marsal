@@ -10,35 +10,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Crear el elemento modal con estructura mejorada
     const modalHTML = `
-    <div id="subscription-modal" class="modal-overlay" role="dialog" aria-labelledby="modal-title" aria-modal="true">
-        <div class="modal-container">
-            <button id="modal-close" class="modal-close" aria-label="Cerrar">&times;</button>
-            <div class="modal-header">
-                <img src="imagenes/logo_marsal.png" alt="Logo Marsal" class="modal-logo">
-                <h2 id="modal-title">¡Bienvenido/a a MARSAL!</h2>
-            </div>
-            <div class="modal-body">
-                <p>Suscríbete a nuestra newsletter para recibir las últimas novedades y ofertas exclusivas.</p>
-                <form id="modal-subscription-form" class="modal-form">
-                    <input type="email" id="modal-email" placeholder="Introduce tu email" required 
-                           aria-label="Email para suscripción">
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="accept-cookies" name="accept-cookies" required>
-                        <label for="accept-cookies">Acepto el uso de cookies necesarias para mejorar mi experiencia en el sitio web.</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="accept-marketing" name="accept-marketing">
-                        <label for="accept-marketing">Deseo recibir correos electrónicos con ofertas y novedades de MARSAL.</label>
-                    </div>
-                    <button type="submit">Suscribirme</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <p>Al suscribirte, aceptas nuestra <a href="privacidad.html">Política de Privacidad</a> y <a href="terminos.html">Términos y Condiciones</a>.</p>
-            </div>
-        </div>
+  <div id="subscription-modal" class="modal-overlay">
+    <div class="modal-container">
+      <button id="modal-close" class="modal-close">&times;</button>
+      <div class="modal-header">
+        <h2>Suscríbete</h2>
+      </div>
+      <div class="modal-body">
+        <form id="modal-subscription-form" class="modal-form">
+          <input type="email" id="modal-email" placeholder="Tu correo electrónico" required>
+          <div class="checkbox-container">
+            <input type="checkbox" id="accept-cookies">
+            <label for="accept-cookies">Acepto cookies</label>
+          </div>
+          <div class="checkbox-container">
+            <input type="checkbox" id="accept-marketing">
+            <label for="accept-marketing">Acepto recibir comunicaciones comerciales</label>
+          </div>
+          <button type="submit">Suscribirme</button>
+        </form>
+      </div>
     </div>
-    `;
+  </div>
+`;
+
     
     // Insertar el modal en el DOM
     document.body.insertAdjacentHTML('beforeend', modalHTML);
