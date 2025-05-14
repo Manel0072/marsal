@@ -9,30 +9,31 @@
 </head>
 <body>
   <header>
-          <div id="cabecera_superior">
-        <nav id="navinicial">
-            <p>ESPAÑA</p>
-            <pre>   |   </pre>
-            <p>NUESTRA TIENDA</p>
-        </nav>
+    <div id="cabecera_superior">
+      <nav id="navinicial">
+        <p>ESPAÑA</p>
+        <pre>   |   </pre>
+        <p>NUESTRA TIENDA</p>
+      </nav>
+    </div>
+    <div id="cabecera_central">
+      <div></div>
+      <div><a href="index.html"><img src="imagenes/logo_marsal.png" class="logo" /></a></div>
+      <div id="conIconos">
+        <img src="imagenes/corazon.png" class="iconitos" />
+        <img src="imagenes/carrito.png" class="iconitos" />
       </div>
-      <div id="cabecera_central">
-        <div></div>
-        <div><a href="index.html"><img src="imagenes/logo_marsal.png" class="logo" /></a></div>
-        <div id="conIconos">
-          <img src="imagenes/corazon.png" class="iconitos" />
-          <img src="imagenes/carrito.png" class="iconitos" />
-        </div>
-      </div>
-      <div id="cabecera_inferior">
-        <div id="niño1"><a href="productos.html"><img src="imagenes/menu.png"> <p>COLECCIONES</p></a></div>
-        <div id="niño2"><a href="index.html"><p>AMENU PRINCIPAL</p></a></div>
-      </div>
+    </div>
+    <div id="cabecera_inferior">
+      <div id="niño1"><a href="productos.html"><img src="imagenes/menu.png"> <p>COLECCIONES</p></a></div>
+      <div id="niño2"><a href="index.html"><p>MENU PRINCIPAL</p></a></div>
+    </div>
   </header>
 
-  <main>
+  <main class="acerca-main">
     <section class="hero-acerca">
-      <div class="container">
+      <div class="overlay"></div>
+      <div class="hero-content">
         <h1>ACERCA DE MARSAL</h1>
         <p class="tagline">Artesanía sostenible, diseño contemporáneo</p>
       </div>
@@ -40,11 +41,11 @@
 
     <section class="nuestra-historia">
       <div class="container">
+        <h2>Nuestra Historia</h2>
         <div class="two-columns">
           <div class="column">
-            <h2>Nuestra Historia</h2>
             <p>En MARSAL nos especializamos en la creación de bolsos exclusivos de alta calidad, elaborados de forma artesanal con piel vegana. Nuestro compromiso con la sostenibilidad, el diseño contemporáneo y la atención que le ponemos a cada detalle nos permite ofrecer productos únicos que combinan elegancia, funcionalidad y respeto por el medio ambiente.</p>
-            <p>Cada uno de nuestros bolsos está confeccionado a mano por artesanos expertos, utilizando piel vegana con acabados premium que imitan patrones de cuatro tipos de piel exótica: serpiente, cocodrilo, cebra y leopardo.</p>
+            <p>La marca nació en 2020 a partir de un sueño de crear accesorios que no comprometieran nuestros valores éticos. Vimos la oportunidad de reinventar el concepto de bolsos de lujo, demostrando que es posible crear productos de alta gama sin utilizar materiales de origen animal.</p>
           </div>
           <div class="column">
             <div class="image-container">
@@ -55,7 +56,7 @@
       </div>
     </section>
 
-    <section class="valores">
+    <section class="valores-section">
       <div class="container">
         <h2>Nuestros Valores</h2>
         <div class="valores-grid">
@@ -91,7 +92,31 @@
       </div>
     </section>
 
-    <section class="proceso">
+    <section class="materiales-section">
+      <div class="container">
+        <h2>Nuestros Materiales</h2>
+        <div class="materiales-container">
+          <div class="material-card">
+            <h3>Piel Vegana Premium</h3>
+            <p>Seleccionamos cuidadosamente pieles veganas de primera calidad que imitan con precisión la textura y apariencia de pieles exóticas tradicionales, pero sin crueldad animal.</p>
+          </div>
+          <div class="material-card">
+            <h3>Herrajes Exclusivos</h3>
+            <p>Todos nuestros bolsos incorporan herrajes de alta calidad, cuidadosamente seleccionados para garantizar durabilidad y un acabado premium.</p>
+          </div>
+          <div class="material-card">
+            <h3>Forros Resistentes</h3>
+            <p>El interior de cada bolso está confeccionado con materiales duraderos que protegen tus pertenencias mientras aportan un toque de sofisticación.</p>
+          </div>
+          <div class="material-card">
+            <h3>Texturas Únicas</h3>
+            <p>Trabajamos con cuatro patrones de piel vegana que recrean fielmente las texturas de serpiente, cocodrilo, cebra y leopardo, ofreciendo diseños singulares.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proceso-section">
       <div class="container">
         <h2>Nuestro Proceso</h2>
         <div class="proceso-pasos">
@@ -119,19 +144,96 @@
       </div>
     </section>
 
-    <section class="contacto-rapido">
+    <section class="equipo-section">
+      <div class="container">
+        <h2>Nuestro Equipo</h2>
+        <div class="equipo-grid">
+          <div class="miembro-card">
+            <div class="miembro-imagen">
+              <img src="/api/placeholder/250/250" alt="Foto de fundadora" class="rounded-image">
+            </div>
+            <h3>María Alonso</h3>
+            <p class="cargo">Fundadora & Diseñadora</p>
+            <p>Con más de 15 años de experiencia en el diseño de accesorios, María combina su pasión por la moda con su compromiso por la sostenibilidad.</p>
+          </div>
+          <div class="miembro-card">
+            <div class="miembro-imagen">
+              <img src="/api/placeholder/250/250" alt="Foto de director creativo" class="rounded-image">
+            </div>
+            <h3>Luis Ramírez</h3>
+            <p class="cargo">Director Creativo</p>
+            <p>Su visión innovadora y atención al detalle hacen que cada colección de MARSAL sea única y refleje la esencia de la marca.</p>
+          </div>
+          <div class="miembro-card">
+            <div class="miembro-imagen">
+              <img src="/api/placeholder/250/250" alt="Foto de maestra artesana" class="rounded-image">
+            </div>
+            <h3>Sara López</h3>
+            <p class="cargo">Maestra Artesana</p>
+            <p>Con décadas de experiencia en marroquinería, Sara supervisa cada aspecto de la producción para garantizar la excelencia en cada pieza.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacto-section">
       <div class="container">
         <div class="contacto-info">
           <h2>Contacto</h2>
           <p>Para nosotras, no se trata solo de vender un producto, sino de crear un vínculo real con cada cliente, basado en la confianza, la transparencia y el cuidado.</p>
-          <ul class="contacto-detalles">
-            <li><strong>Teléfono:</strong> 611 096 592</li>
-            <li><strong>Email:</strong> marsal@gmail.com</li>
-            <li><strong>Ubicación:</strong> Madrid, Calle Serrano, Barrio Salamanca</li>
-          </ul>
+          <div class="contacto-cards">
+            <div class="contacto-card">
+              <div class="contacto-icon">
+                <img src="/api/placeholder/50/50" alt="Icono teléfono">
+              </div>
+              <h3>Teléfono</h3>
+              <p>611 096 592</p>
+              <p class="horario">Lunes a Viernes, 9:00-18:00</p>
+            </div>
+            <div class="contacto-card">
+              <div class="contacto-icon">
+                <img src="/api/placeholder/50/50" alt="Icono email">
+              </div>
+              <h3>Email</h3>
+              <p>marsal@gmail.com</p>
+              <p class="horario">Respondemos en 24-48 horas</p>
+            </div>
+            <div class="contacto-card">
+              <div class="contacto-icon">
+                <img src="/api/placeholder/50/50" alt="Icono ubicación">
+              </div>
+              <h3>Ubicación</h3>
+              <p>Madrid, Calle Serrano</p>
+              <p class="horario">Barrio Salamanca</p>
+            </div>
+          </div>
           <div class="social-links">
             <a href="#" class="social-link">Instagram</a>
             <a href="#" class="social-link">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="preguntas-section">
+      <div class="container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="preguntas-container">
+          <div class="pregunta">
+            <h3>¿Qué es la piel vegana?</h3>
+            <p>La piel vegana es un material sintético que imita la apariencia y textura del cuero animal, pero sin utilizar ningún componente de origen animal en su fabricación. En MARSAL utilizamos pieles veganas de alta calidad que reproducen fielmente el aspecto de pieles exóticas.</p>
+          </div>
+          <div class="pregunta">
+            <h3>¿Cómo cuidar mi bolso MARSAL?</h3>
+            <p>Recomendamos guardar el bolso en su funda cuando no se utilice, evitar la exposición prolongada al sol, limpiar con un paño suave ligeramente húmedo y mantenerlo alejado de productos químicos o perfumes que puedan dañar el material.</p>
+          </div>
+          <div class="pregunta">
+            <h3>¿Ofrecen envíos internacionales?</h3>
+            <p>Sí, realizamos envíos a nivel internacional. Los gastos de envío varían según el destino, y los tiempos de entrega oscilan entre 5-10 días laborables dependiendo del país.</p>
+          </div>
+          <div class="pregunta">
+            <h3>¿Tienen tienda física?</h3>
+            <p>Actualmente contamos con un showroom en Madrid, en el Barrio de Salamanca, donde puedes ver y probar nuestros productos con cita previa. Contacta con nosotros para concertar una visita.</p>
           </div>
         </div>
       </div>
