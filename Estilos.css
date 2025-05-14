@@ -1033,6 +1033,155 @@ footer {
     font-size: 0.9rem;
 }
   
+/* Estilos para el formulario del footer */
+.footer-form {
+    margin-top: 15px;
+}
+
+.footer-form .form-group {
+    margin-bottom: 15px;
+}
+
+.footer-form label {
+    display: block;
+    color: #3A2F23;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer-form input[type="text"],
+.footer-form input[type="email"],
+.footer-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #C7B9A0;
+    border-radius: 5px;
+    background-color: #FFFDF5;
+    font-size: 0.9rem;
+    color: #3A2F23;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.footer-form input[type="text"]:focus,
+.footer-form input[type="email"]:focus,
+.footer-form textarea:focus {
+    outline: none;
+    border-color: #3A2F23;
+    box-shadow: 0 0 0 2px rgba(216, 201, 182, 0.3);
+}
+
+.footer-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.footer-form button {
+    background-color: #D8C9B6;
+    color: #3A2F23;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.footer-form button:hover {
+    background-color: #C7B9A0;
+    transform: translateY(-2px);
+}
+
+.footer-form button:active {
+    transform: translateY(0);
+}
+
+.footer-form .checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.footer-form .checkbox-row input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.footer-form .checkbox-row label {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.footer-form .form-notice {
+    font-size: 0.8rem;
+    color: #A9987E;
+    margin-top: 10px;
+}
+
+/* Mensaje de éxito/error */
+.footer-form .form-message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.footer-form .form-message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    display: block;
+}
+
+.footer-form .form-message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #c62828;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+    display: block;
+}
+
+/* Responsividad para formulario en footer */
+@media (max-width: 768px) {
+    .footer-form {
+        margin-top: 10px;
+    }
+    
+    .footer-form .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .footer-form button {
+        width: 100%;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-form label {
+        font-size: 0.85rem;
+    }
+    
+    .footer-form input[type="text"],
+    .footer-form input[type="email"],
+    .footer-form textarea {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .footer-form textarea {
+        height: 80px;
+    }
+    
+    .footer-form .checkbox-row label {
+        font-size: 0.8rem;
+    }
+    
+    .footer-form .form-notice {
+        font-size: 0.75rem;
+    }
+}
 /* Responsivo para footer */
 @media (max-width: 768px) {
     .footer-container {
