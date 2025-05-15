@@ -52,15 +52,10 @@ header {
   
 
 
-.iconitos{
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 5px;
-    margin-top: 25px;
-    margin-bottom: 15px;
+/* Asegura que el contenido no quede oculto tras el header fijo */
+body {
+  padding-top: 90px; /* Ajusta según la altura real de tu header */
 }
-
 
 #cabecera_inferior{
     display: grid;
