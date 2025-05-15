@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="modal-container">
         <button class="modal-close" id="modal-close" aria-label="Cerrar">&times;</button>
         <div class="modal-header">
-          <img src="logo.png" alt="Logo" class="modal-logo" />
+          <img src="imagenes/logo_marsal.png" alt="Logo" class="modal-logo" />
           <h2>¡Suscríbete y recibe novedades!</h2>
         </div>
         <div class="modal-body">
