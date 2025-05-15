@@ -1,155 +1,158 @@
-// Datos de las fichas técnicas de los productos
-const fichasTecnicas = {
-    'cocodrilo-marron': {
-        id: 'cocodrilo-marron',
-        nombre: 'Bolso de piel de cocodrilo marrón',
-        imagen: 'Bolsos/cocodrilo_marron.jpeg',
-        precio: '299,99 €',
-        material: 'Piel vegana imitación cocodrilo',
-        dimensiones: '30 x 20 x 10 cm',
-        peso: '0.8 kg',
-        color: 'Marrón chocolate',
-        acabado: 'Textura cocodrilo, mate',
-        forro: 'Interior en tela de algodón orgánico',
-        cremallera: 'Metálica dorada',
-        asas: 'Doble asa corta y correa larga ajustable',
-        bolsillos: '2 compartimentos principales, 1 bolsillo interior con cremallera, 2 bolsillos para móvil/tarjetas',
-        cuidados: 'Limpiar con paño húmedo, mantener alejado de fuentes directas de calor',
-        coleccion: 'Primavera/Verano 2025',
-        fabricacion: 'Artesanal, hecho en España'
-    },
-    'leopardo-elegante': {
-        id: 'leopardo-elegante',
-        nombre: 'Bolso de piel de leopardo elegante',
-        imagen: 'Bolsos/leopardo_elegante.jpeg',
-        precio: '314,49 €',
-        material: 'Piel vegana con estampado leopardo de alta definición',
-        dimensiones: '35 x 25 x 12 cm',
-        peso: '0.9 kg',
-        color: 'Estampado leopardo sobre base beige',
-        acabado: 'Semi-brillante con detalles en negro',
-        forro: 'Interior en microfibra de calidad premium',
-        cremallera: 'Metálica negra con detalles dorados',
-        asas: 'Asas cortas con refuerzo y correa larga desmontable',
-        bolsillos: '1 compartimento principal, 2 bolsillos interiores (1 con cremallera), bolsillo trasero con botón',
-        cuidados: 'Evitar exposición prolongada al sol, limpiar con productos específicos para piel vegana',
-        coleccion: 'Exclusivo Edición Limitada 2025',
-        fabricacion: 'Producción artesanal en talleres españoles'
-    }
-};
-
 // Función para mostrar la ficha técnica
-function mostrarFichaTecnica(id, nombre, imagen) {
-    // Obtenemos la información de la ficha técnica
-    const ficha = fichasTecnicas[id];
+function mostrarFichaTecnica(id, nombre, imagenSrc) {
+    // Obtener el elemento de la ficha técnica
+    const fichaTecnica = document.getElementById('ficha-tecnica');
+    const contenidoFicha = document.getElementById('contenido-ficha');
     
-    // Si no existe la ficha técnica, mostramos un mensaje de error
-    if (!ficha) {
-        alert('Ficha técnica no disponible para este producto');
-        return;
-    }
+    // Datos del producto según su ID
+    let datos = obtenerDatosProducto(id);
     
-    // Construimos el HTML de la ficha técnica
-    const contenidoFicha = `
+    // Crear contenido HTML para la ficha técnica
+    let contenidoHTML = `
         <div class="ficha-producto">
-            <h2>${ficha.nombre}</h2>
-            <div class="ficha-contenido">
+            <div class="ficha-header">
                 <div class="ficha-imagen">
-                    <img src="${ficha.imagen}" alt="${ficha.nombre}">
+                    <img src="${imagenSrc}" alt="${nombre}">
                 </div>
-                <div class="ficha-detalles">
-                    <table>
-                        <tr>
-                            <th>Referencia:</th>
-                            <td>${ficha.id}</td>
-                        </tr>
-                        <tr>
-                            <th>Precio:</th>
-                            <td>${ficha.precio}</td>
-                        </tr>
-                        <tr>
-                            <th>Material:</th>
-                            <td>${ficha.material}</td>
-                        </tr>
-                        <tr>
-                            <th>Dimensiones:</th>
-                            <td>${ficha.dimensiones}</td>
-                        </tr>
-                        <tr>
-                            <th>Peso:</th>
-                            <td>${ficha.peso}</td>
-                        </tr>
-                        <tr>
-                            <th>Color:</th>
-                            <td>${ficha.color}</td>
-                        </tr>
-                        <tr>
-                            <th>Acabado:</th>
-                            <td>${ficha.acabado}</td>
-                        </tr>
-                        <tr>
-                            <th>Forro:</th>
-                            <td>${ficha.forro}</td>
-                        </tr>
-                        <tr>
-                            <th>Cremallera:</th>
-                            <td>${ficha.cremallera}</td>
-                        </tr>
-                        <tr>
-                            <th>Asas:</th>
-                            <td>${ficha.asas}</td>
-                        </tr>
-                        <tr>
-                            <th>Compartimentos:</th>
-                            <td>${ficha.bolsillos}</td>
-                        </tr>
-                        <tr>
-                            <th>Cuidados:</th>
-                            <td>${ficha.cuidados}</td>
-                        </tr>
-                        <tr>
-                            <th>Colección:</th>
-                            <td>${ficha.coleccion}</td>
-                        </tr>
-                        <tr>
-                            <th>Fabricación:</th>
-                            <td>${ficha.fabricacion}</td>
-                        </tr>
-                    </table>
-                    <div class="ficha-botones">
-                        <button onclick="AlCarrito('${ficha.nombre}', ${ficha.precio.replace(',', '.').replace(' €', '')})">Añadir al carrito</button>
-                        <button id="volver-productos">Volver a productos</button>
-                    </div>
+                <div class="ficha-info-basica">
+                    <h2 class="ficha-titulo">${nombre}</h2>
+                    <p class="ficha-precio">${datos.precio} €</p>
+                    <p class="ficha-descripcion">${datos.descripcion}</p>
+                    <button class="ficha-boton" onclick="AlCarrito('${nombre}', ${datos.precio})">Añadir al carrito</button>
                 </div>
+            </div>
+            
+            <div class="ficha-detalles">
+                <div class="ficha-seccion">
+                    <h3>Características</h3>
+                    <ul class="ficha-caracteristicas">
+                        <li><span>Material:</span> ${datos.material}</li>
+                        <li><span>Dimensiones:</span> ${datos.dimensiones}</li>
+                        <li><span>Color:</span> ${datos.color}</li>
+                        <li><span>Peso:</span> ${datos.peso}</li>
+                        <li><span>Referencia:</span> ${datos.referencia}</li>
+                    </ul>
+                </div>
+                
+                <div class="ficha-seccion">
+                    <h3>Detalles adicionales</h3>
+                    <ul class="ficha-caracteristicas">
+                        <li><span>Tipo de cierre:</span> ${datos.cierre}</li>
+                        <li><span>Interior:</span> ${datos.interior}</li>
+                        <li><span>Bolsillos:</span> ${datos.bolsillos}</li>
+                        <li><span>Correa:</span> ${datos.correa}</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="ficha-cuidados">
+                <h3>Cuidados del producto</h3>
+                <ul>
+                    <li>Limpiar con un paño húmedo sin productos químicos agresivos.</li>
+                    <li>Almacenar en un lugar seco y a temperatura ambiente.</li>
+                    <li>Evitar la exposición prolongada al sol para preservar el color.</li>
+                    <li>Para manchas difíciles, acudir a un servicio profesional de limpieza.</li>
+                </ul>
             </div>
         </div>
     `;
     
-    // Actualizamos el contenido de la ficha técnica
-    document.getElementById('contenido-ficha').innerHTML = contenidoFicha;
+    // Insertar el contenido en la ficha técnica
+    contenidoFicha.innerHTML = contenidoHTML;
     
-    // Mostramos la sección de ficha técnica
-    const fichaTecnicaElement = document.getElementById('ficha-tecnica');
-    fichaTecnicaElement.style.display = 'block';
+    // Mostrar la ficha técnica
+    fichaTecnica.style.display = 'flex';
     
-    // Ocultamos el contenido principal
-    document.getElementById('mainproductos').style.display = 'none';
+    // Bloquear el scroll del body cuando la ficha está abierta
+    document.body.style.overflow = 'hidden';
+}
+
+// Función para obtener los datos de un producto según su ID
+function obtenerDatosProducto(id) {
+    // Base de datos de productos
+    const productos = {
+        'cocodrilo-marron': {
+            precio: 299.99,
+            descripcion: 'Elegante bolso de piel vegana con textura de cocodrilo en tono marrón. Un complemento perfecto para cualquier ocasión formal o casual, combinando sofisticación y funcionalidad.',
+            material: 'Piel vegana premium con textura de cocodrilo',
+            dimensiones: '30cm x 20cm x 10cm',
+            color: 'Marrón',
+            peso: '0.8 kg',
+            referencia: 'COCO-M-01',
+            cierre: 'Cremallera y solapa magnética',
+            interior: 'Forro textil en color beige',
+            bolsillos: '2 compartimentos principales, 1 bolsillo con cremallera y 2 bolsillos abiertos',
+            correa: 'Ajustable y desmontable de 120cm'
+        },
+        'leopardo-elegante': {
+            precio: 314.49,
+            descripcion: 'Sofisticado bolso de piel vegana con estampado de leopardo. Diseño elegante y atemporal con acabados de alta calidad, ideal para eventos especiales.',
+            material: 'Piel vegana de alta calidad con estampado de leopardo',
+            dimensiones: '35cm x 25cm x 12cm',
+            color: 'Estampado leopardo sobre base beige',
+            peso: '0.9 kg',
+            referencia: 'LEOP-E-03',
+            cierre: 'Broche giratorio dorado',
+            interior: 'Forro de seda sintética en negro',
+            bolsillos: '1 compartimento principal, 2 bolsillos con cremallera y 3 bolsillos abiertos',
+            correa: 'Cadena dorada de 100cm'
+        },
+        // Puedes añadir más productos aquí siguiendo el mismo formato
+    };
     
-    // Configuramos el evento para el botón de volver
-    document.getElementById('volver-productos').addEventListener('click', cerrarFichaTecnica);
+    // Si el producto no existe, devolver datos genéricos
+    if (!productos[id]) {
+        return {
+            precio: 299.99,
+            descripcion: 'Bolso MARSAL de alta calidad con diseño exclusivo.',
+            material: 'Piel vegana premium',
+            dimensiones: '30cm x 20cm x 10cm',
+            color: 'Ver imagen',
+            peso: '0.8 kg',
+            referencia: 'MARSAL-' + id,
+            cierre: 'Cremallera',
+            interior: 'Forro textil',
+            bolsillos: 'Múltiples compartimentos',
+            correa: 'Ajustable'
+        };
+    }
+    
+    return productos[id];
 }
 
 // Función para cerrar la ficha técnica
 function cerrarFichaTecnica() {
-    // Ocultamos la sección de ficha técnica
-    document.getElementById('ficha-tecnica').style.display = 'none';
+    const fichaTecnica = document.getElementById('ficha-tecnica');
+    fichaTecnica.style.display = 'none';
     
-    // Mostramos el contenido principal
-    document.getElementById('mainproductos').style.display = 'block';
+    // Restaurar el scroll del body
+    document.body.style.overflow = 'auto';
 }
 
-// Inicializamos los eventos cuando el DOM esté cargado
+// Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', function() {
-    // Configuramos el evento para el botón de cerrar
-    document.getElementById('cerrar-ficha').addEventListener('click', cerrarFichaTecnica);
+    // Asignar evento al botón de cerrar
+    const cerrarBtn = document.getElementById('cerrar-ficha');
+    if (cerrarBtn) {
+        cerrarBtn.addEventListener('click', cerrarFichaTecnica);
+    }
+    
+    // También cerrar al hacer clic fuera del contenido
+    const fichaTecnica = document.getElementById('ficha-tecnica');
+    if (fichaTecnica) {
+        fichaTecnica.addEventListener('click', function(e) {
+            // Si el clic fue directamente en el fondo (no en el contenido)
+            if (e.target === fichaTecnica) {
+                cerrarFichaTecnica();
+            }
+        });
+    }
+    
+    // Evitar que se cierre al hacer clic dentro del contenido
+    const contenidoFicha = document.getElementById('contenido-ficha');
+    if (contenidoFicha) {
+        contenidoFicha.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
