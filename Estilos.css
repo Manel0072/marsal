@@ -1232,6 +1232,96 @@ footer {
     }
 }
 
+.footer-legal-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.footer-legal-link button {
+  background: #c7b9a0;
+  color: #3A2F23;
+  border: none;
+  padding: 0.7em 1.5em;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.footer-legal-link button:hover {
+  background: #b6a488;
+}
+
+/* Modal estilos */
+.legal-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.legal-modal-content {
+  background: #fffde2;
+  color: #3A2F23;
+  margin: 4% auto;
+  padding: 2rem 1.5rem;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  font-size: 1rem;
+}
+
+.legal-modal-content h4 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #3A2F23;
+}
+
+.legal-modal-content ul {
+  margin: 0.5rem 0 1rem 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.legal-modal-content li {
+  margin-bottom: 0.4rem;
+}
+
+.legal-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3A2F23;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.legal-modal-close:hover {
+  color: #b6a488;
+}
+
+@media (max-width: 600px) {
+  .legal-modal-content {
+    padding: 1rem 0.5rem;
+    font-size: 0.93rem;
+    max-width: 98vw;
+    max-height: 90vh;
+  }
+}
+
+
 /* Estilos para el modal de suscripción */
 .modal-overlay {
     position: fixed;
