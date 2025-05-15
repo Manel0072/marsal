@@ -46,6 +46,13 @@
       </body>
       <main id="mainproductos">
         
+        <!-- Sección para mostrar la ficha técnica -->
+        <div id="ficha-tecnica" style="display: none;">
+          <button id="cerrar-ficha">X</button>
+          <div id="contenido-ficha">
+            <!-- El contenido de la ficha técnica se cargará dinámicamente -->
+          </div>
+        </div>
         
         <h2 id="cocodrilo">Piel de Cocodrilo</h2>
             <div class="grid">
@@ -54,7 +61,8 @@
                 <p>Bolso de piel de cocodrilo marron</p>
                 <p>299,99 €</p>
                 <button onclick="AlCarrito('Bolso de piel de cocodrilo marrón', 299.99)">Añadir al carrito</button>
-
+                <!-- Primer botón de ficha técnica -->
+                <button onclick="mostrarFichaTecnica('cocodrilo-marron', 'Bolso de piel de cocodrilo marrón', 'Bolsos/cocodrilo_marron.jpeg')">Ver ficha técnica</button>
               </div>
               <div class="caja">
                 <img src="Bolsos/cocodrilo_verde.jpeg">
@@ -125,6 +133,8 @@
                 <p>Bolso de piel de leopardo elegante</p>
                 <p>314,49 €</p>
                 <button onclick="AlCarrito('Bolso de piel de leopardo elegante', 314.49)">Añadir al carrito</button>
+                <!-- Segundo botón de ficha técnica -->
+                <button onclick="mostrarFichaTecnica('leopardo-elegante', 'Bolso de piel de leopardo elegante', 'Bolsos/leopardo_elegante.jpeg')">Ver ficha técnica</button>
               </div>
               <div class="caja">
                 <img src="Bolsos/leopardo_grande.jpeg">
@@ -179,6 +189,7 @@
 
 <script src="carrito.js"></script>
 <script src="legal-modal.js"></script>
+<script src="ficha-tecnica.js"></script>
 
 
 </body>
@@ -294,4 +305,3 @@
 </div>
 </footer>
 </html>
-
