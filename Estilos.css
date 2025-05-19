@@ -2412,6 +2412,7 @@ footer {
   width: 100%;
   height: auto;
   display: block;
+  align-items: center;
 }
 
 .collections-slider .item .info {
