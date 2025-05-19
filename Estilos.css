@@ -354,7 +354,7 @@ h2 {
     .centado {
         top: 0;
         /* No hace falta posicionamiento relativo */
-        padding: 15px;
+        padding: 0px;
         /* Más padding */
         font-size: 1.1rem;
         /* Fuente más pequeña */
