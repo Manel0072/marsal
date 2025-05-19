@@ -32,7 +32,75 @@
       
     <script src="suscripcion.js"></script>
       
-      <!-- División principal con los enlaces -->
+      <!-- Nuevo carrusel de colecciones -->
+      <div class="collections-carousel">
+        <div class="collections-header">
+          <h2>Nuestras Colecciones</h2>
+          <p class="collections-subtitle">Bolsos veganos que capturan la esencia del lujo salvaje sin comprometer la ética.</p>
+          <p class="collections-description">Cada diseño refleja carácter, elegancia y conciencia. Por eso son piezas exclusivas, hechas para quienes eligen destacar con propósito.</p>
+          <p class="collections-statement"><em>No es solo un bolso, es una declaración de quién eres.</em></p>
+        </div>
+        
+        <div class="collections-slider">
+          <div class="collections-container">
+            <div class="collection-slide active">
+              <a href="productos.html">
+                <div class="collection-item">
+                  <img src="imagenes/serpiente_modelo.jpg" alt="Modelo con bolso de piel de serpiente">
+                  <div class="collection-info">
+                    <h3>PIEL DE SERPIENTE</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="collection-slide">
+              <a href="productos.html">
+                <div class="collection-item">
+                  <img src="imagenes/cocodrilo_modelo.jpg" alt="Modelo con bolso de piel de cocodrilo">
+                  <div class="collection-info">
+                    <h3>PIEL DE COCODRILO</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="collection-slide">
+              <a href="productos.html">
+                <div class="collection-item">
+                  <img src="imagenes/cebra_modelo.jpg" alt="Modelo con bolso de piel de cebra">
+                  <div class="collection-info">
+                    <h3>PIEL DE CEBRA</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+            
+            <div class="collection-slide">
+              <a href="productos.html">
+                <div class="collection-item">
+                  <img src="imagenes/leopardo_modelo.jpg" alt="Modelo con bolso de piel de leopardo">
+                  <div class="collection-info">
+                    <h3>PIEL DE LEOPARDO</h3>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          
+          <button class="collections-btn prev" aria-label="Colección anterior">&lt;</button>
+          <button class="collections-btn next" aria-label="Siguiente colección">&gt;</button>
+          
+          <div class="collections-indicators">
+            <div class="collections-indicator active" aria-label="Colección 1"></div>
+            <div class="collections-indicator" aria-label="Colección 2"></div>
+            <div class="collections-indicator" aria-label="Colección 3"></div>
+            <div class="collections-indicator" aria-label="Colección 4"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- División de enlaces movida debajo -->
       <div id="totality">
         <div id="divisionuno" style="background-color: rgb(0, 59, 5)">
             <a href="novedades.html">
@@ -123,6 +191,7 @@
     </section>
     
     <script src="sliders.js"></script>
+    <script src="collections-slider.js"></script>
     <script src="legal-modal.js"></script>
   </body>
 
@@ -235,6 +304,5 @@
     </p>
   </div>
 </div>
-</footer>
-
+</footer> 
 </html>
