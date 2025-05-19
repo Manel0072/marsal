@@ -194,8 +194,8 @@ h2{
 }
 
 .pagina-productos header {
-    position: relative;
-    height: 60px;
+    position: fixed;
+    width: 100%;
 }
 
 .grid {
