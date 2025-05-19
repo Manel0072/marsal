@@ -2468,68 +2468,71 @@ footer {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* ===== RESPONSIVE PARA EL CARRUSEL DE COLECCIONES ===== */
-
-@media (max-width: 768px) {
-    .collections-carousel {
-        padding: 40px 0;
-    }
-    
-    .collections-header h2 {
-        font-size: 2rem;
-    }
-    
-    .collections-header {
-        padding: 0 15px;
-        margin-bottom: 30px;
-    }
-    
-    .collection-item {
-        height: 400px;
-    }
-    
-    .collection-info h3 {
-        font-size: 1.5rem;
-    }
-    
-    .collections-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-    
-    .collections-btn.prev {
-        left: 10px;
-    }
-    
-    .collections-btn.next {
-        right: 10px;
-    }
+/* Estilo general del contenedor del carrusel */
+.collections-slider {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-@media (max-width: 480px) {
-    .collections-carousel {
-        padding: 30px 0;
-    }
-    
-    .collections-header h2 {
-        font-size: 1.8rem;
-    }
-    
-    .collections-subtitle,
-    .collections-description {
-        font-size: 0.9rem;
-    }
-    
-    .collection-item {
-        height: 350px;
-    }
-    
-    .collection-info {
-        padding: 20px 15px 15px;
-    }
-    
-    .collection-info h3 {
-        font-size: 1.3rem;
-    }
+/* Ocultar scrollbars */
+.collections-slider::-webkit-scrollbar {
+  display: none;
+}
+.collections-slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Estilo de cada ítem */
+.collections-slider .item {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.collections-slider .item:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen dentro del ítem */
+.collections-slider .item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texto o contenido dentro del ítem */
+.collections-slider .item .info {
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+/* Botones de navegación opcionales */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1;
+}
+.carousel-nav.left {
+  left: 10px;
+}
+.carousel-nav.right {
+  right: 10px;
 }
