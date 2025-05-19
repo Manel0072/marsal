@@ -32,73 +32,60 @@
       
     <script src="suscripcion.js"></script>
       
-      <!-- Nuevo carrusel de colecciones -->
-      <div class="collections-carousel">
-        <div class="collections-header">
-          <h2>Nuestras Colecciones</h2>
-          <p class="collections-subtitle">Bolsos veganos que capturan la esencia del lujo salvaje sin comprometer la ética.</p>
-          <p class="collections-description">Cada diseño refleja carácter, elegancia y conciencia. Por eso son piezas exclusivas, hechas para quienes eligen destacar con propósito.</p>
-          <p class="collections-statement"><em>No es solo un bolso, es una declaración de quién eres.</em></p>
+      <!-- Nuevo carrusel de colecciones actualizado -->
+<div class="collections-section">
+  <h2>Nuestras Colecciones</h2>
+  <p class="collections-subtitle">Bolsos veganos que capturan la esencia del lujo salvaje sin comprometer la ética.</p>
+  <p class="collections-description">Cada diseño refleja carácter, elegancia y conciencia. Por eso son piezas exclusivas, hechas para quienes eligen destacar con propósito.</p>
+  <p class="collections-statement"><em>No es solo un bolso, es una declaración de quién eres.</em></p>
+
+  <div class="collections-slider" id="collectionsSlider">
+    <!-- Slide 1 -->
+    <div class="item">
+      <a href="productos.html">
+        <img src="imagenes/8324c4cf-e134-45ed-ab3e-feec69c3fd83.jpeg" alt="Modelo con bolso de piel de serpiente">
+        <div class="info">
+          <h3>PIEL DE SERPIENTE</h3>
         </div>
-        
-        <div class="collections-slider">
-          <div class="collections-container">
-            <div class="collection-slide active">
-              <a href="productos.html">
-                <div class="collection-item">
-                  <img src="imagenes/8324c4cf-e134-45ed-ab3e-feec69c3fd83.jpeg" alt="Modelo con bolso de piel de serpiente">
-                  <div class="collection-info">
-                    <h3>PIEL DE SERPIENTE</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            <div class="collection-slide">
-              <a href="productos.html">
-                <div class="collection-item">
-                  <img src="imagenes/99b4933a-e83e-4e7e-ae16-8eb5a5245a89.jpeg" alt="Modelo con bolso de piel de cocodrilo">
-                  <div class="collection-info">
-                    <h3>PIEL DE COCODRILO</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            <div class="collection-slide">
-              <a href="productos.html">
-                <div class="collection-item">
-                  <img src="imagenes/b55eb9dc-9a08-489f-a9b2-fc2fdf52259e.jpeg" alt="Modelo con bolso de piel de cebra">
-                  <div class="collection-info">
-                    <h3>PIEL DE CEBRA</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-            
-            <div class="collection-slide">
-              <a href="productos.html">
-                <div class="collection-item">
-                  <img src="imagenes/c4a273b8-67c3-49bd-a20d-307f0b41950d.jpeg" alt="Modelo con bolso de piel de leopardo">
-                  <div class="collection-info">
-                    <h3>PIEL DE LEOPARDO</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          <button class="collections-btn prev" aria-label="Colección anterior">&lt;</button>
-          <button class="collections-btn next" aria-label="Siguiente colección">&gt;</button>
-          
-          <div class="collections-indicators">
-            <div class="collections-indicator active" aria-label="Colección 1"></div>
-            <div class="collections-indicator" aria-label="Colección 2"></div>
-            <div class="collections-indicator" aria-label="Colección 3"></div>
-            <div class="collections-indicator" aria-label="Colección 4"></div>
-          </div>
+      </a>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="item">
+      <a href="productos.html">
+        <img src="imagenes/99b4933a-e83e-4e7e-ae16-8eb5a5245a89.jpeg" alt="Modelo con bolso de piel de cocodrilo">
+        <div class="info">
+          <h3>PIEL DE COCODRILO</h3>
         </div>
-      </div>
+      </a>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="item">
+      <a href="productos.html">
+        <img src="imagenes/b55eb9dc-9a08-489f-a9b2-fc2fdf52259e.jpeg" alt="Modelo con bolso de piel de cebra">
+        <div class="info">
+          <h3>PIEL DE CEBRA</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="item">
+      <a href="productos.html">
+        <img src="imagenes/c4a273b8-67c3-49bd-a20d-307f0b41950d.jpeg" alt="Modelo con bolso de piel de leopardo">
+        <div class="info">
+          <h3>PIEL DE LEOPARDO</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Botones de navegación -->
+  <button class="carousel-nav left" onclick="scrollCarousel(-1)" aria-label="Anterior">&#10094;</button>
+  <button class="carousel-nav right" onclick="scrollCarousel(1)" aria-label="Siguiente">&#10095;</button>
+</div>
+
 
       <!-- División de enlaces movida debajo -->
       <div id="totality">
@@ -193,7 +180,16 @@
     <script src="sliders.js"></script>
     <script src="collections-slider.js"></script>
     <script src="legal-modal.js"></script>
+    <script>
+  function scrollCarousel(direction) {
+    const slider = document.getElementById('collectionsSlider');
+    const scrollAmount = 320;
+    slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+  }
+</script>
+
   </body>
+
 
 <footer>
     <div class="footer-container">

@@ -2375,100 +2375,6 @@ footer {
     }
 }
 
-.collection-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.collection-item:hover img {
-    transform: scale(1.05);
-}
-
-.collection-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-    color: white;
-    padding: 40px 30px 30px;
-    text-align: center;
-}
-
-.collection-info h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.collections-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.collections-btn:hover {
-    background-color: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.collections-btn.prev {
-    left: 20px;
-}
-
-.collections-btn.next {
-    right: 20px;
-}
-
-.collections-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: 10px;
-}
-
-.collections-indicator {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.collections-indicator.active {
-    background-color: white;
-    transform: scale(1.2);
-}
-
-.collections-indicator:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Estilo general del contenedor del carrusel */
 .collections-slider {
   position: relative;
   display: flex;
@@ -2481,7 +2387,6 @@ footer {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-/* Ocultar scrollbars */
 .collections-slider::-webkit-scrollbar {
   display: none;
 }
@@ -2490,7 +2395,6 @@ footer {
   scrollbar-width: none;
 }
 
-/* Estilo de cada ítem */
 .collections-slider .item {
   flex: 0 0 auto;
   width: 300px;
@@ -2504,21 +2408,19 @@ footer {
   transform: scale(1.05);
 }
 
-/* Imagen dentro del ítem */
 .collections-slider .item img {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* Texto o contenido dentro del ítem */
 .collections-slider .item .info {
   padding: 1rem;
   font-family: 'Arial', sans-serif;
   color: #333;
+  text-align: center;
 }
 
-/* Botones de navegación opcionales */
 .carousel-nav {
   position: absolute;
   top: 50%;
@@ -2529,10 +2431,11 @@ footer {
   cursor: pointer;
   padding: 0.5rem;
   z-index: 1;
+  font-size: 1.5rem;
 }
 .carousel-nav.left {
-  left: 10px;
+  left: 0.5rem;
 }
 .carousel-nav.right {
-  right: 10px;
+  right: 0.5rem;
 }
