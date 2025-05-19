@@ -1535,10 +1535,6 @@ footer {
 
 /* ------------ Estilos de la página Acerca de MARSAL ------------ */
 
-/* Si usas un header fijo y .hero-acerca como primer bloque */
-.hero-acerca {
-  margin-top: 0 !important;
-}
 
 
 
@@ -1553,6 +1549,7 @@ footer {
   color: #FFFDE2;
   display: flex;
   align-items: center;
+  margin-top: 0 !important;
 }
 
 .hero-acerca .overlay {
