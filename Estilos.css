@@ -18,14 +18,14 @@ a:link, a:visited {
 
 /* --------------------------cosas compartidas (cabecera) ------------------------- */
 header {
-  position:fixed ;
+  position:static;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #D8C9B6;
   z-index: 100;
-  padding: 5px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-top: -90px;
 }
 
   
@@ -48,10 +48,6 @@ header {
   width: 100%;
 }
 
-/* Asegura que el contenido no quede oculto tras el header fijo */
-body {
-  padding-top: 90px; /* Ajusta según la altura real de tu header */
-}
 
 /* Centra el logo y lo mantiene proporcionado */
 .logo {
@@ -180,21 +176,16 @@ h2{
 
 /* --------------------------pagina productos------------------------- */
 #mainproductos{
-  margin-top: 180px; /* Aumentado para dar espacio al menú fijo */
   padding: 0 10px; /* Padding lateral para móviles */
 }
 
 #mainproductos h2:not(:first-child) {
   margin-top: 3rem;
 }
-.pagina-productos .logo {
-    height: 70px;
-    width: 200px;
-    margin-top: 60px;
-}
 
 .pagina-productos header {
-    position: fixed;
+    position: static;
+    margin-top: -90px;
     width: 100%;
 }
 
