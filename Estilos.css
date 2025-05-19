@@ -1535,20 +1535,11 @@ footer {
 
 /* ------------ Estilos de la página Acerca de MARSAL ------------ */
 
-
-/* --- Quitar espacio entre header y sección principal --- */
-
 /* Si usas un header fijo y .hero-acerca como primer bloque */
 .hero-acerca {
   margin-top: 0 !important;
 }
 
-
-/* Si hay un main, también puedes asegurarte de que no tenga margen */
-main {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
 
 
 /* Hero Section */
