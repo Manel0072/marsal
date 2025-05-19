@@ -22,87 +22,36 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #D8C9B6;
+  background-color: #D8C9B6;
   z-index: 100;
+  padding: 5px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  padding: 0;
-  border-bottom: 2px solid #a89c8b;
 }
 
-.cabecera-superior {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 90px;
-  padding: 0 30px;
+  
+.logo{
+    width: 50%;
+    min-width: 150px;
+    max-width: 200px; /* Limitar tamaño máximo */
+    display: bl   ock;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.nav-izq,
-.nav-der {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.menu-hamburguesa {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  margin-right: 8px;
-  cursor: pointer;
-  color: #3A2F23;
-}
-
-.logo-centro {
-  flex: 1;
+/* Centra el contenido del header */
+#cabecera_central {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.logo-marsal {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
-  letter-spacing: 0.2em;
-  color: #3A2F23;
-  font-weight: bold;
-}
-
-.nav-link {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  color: #3A2F23;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.nav-link:hover {
-  color: #a89c8b;
-}
-
-@media (max-width: 900px) {
-  .cabecera-superior {
-    flex-direction: column;
-    height: auto;
-    padding: 10px 10px;
-    gap: 8px;
-  }
-  .logo-centro {
-    margin: 10px 0;
-  }
-  .nav-izq, .nav-der {
-    gap: 12px;
-    font-size: 0.95rem;
-  }
-}
+/* Asegura que el contenido no quede oculto tras el header fijo */
 body {
-  padding-top: 90px; /* igual a la altura del header */
+  padding-top: 90px; /* Ajusta según la altura real de tu header */
 }
-
-
 
 /* Centra el logo y lo mantiene proporcionado */
 .logo {
@@ -113,6 +62,10 @@ body {
   min-width: 150px;
   width: 50%;
 }
+body {
+  padding-top: 90px; /* igual a la altura del header */
+}
+
 
 #cabecera_inferior{
     display: grid;
