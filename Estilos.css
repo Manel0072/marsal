@@ -143,6 +143,12 @@ h2 {
     justify-content: center;
     text-align: center;
     padding: 40px 20px;
+    background: url(diseño3.png);
+    background-repeat: round;
+    background-size: cover;
+    /* Mejor cobertura */
+    background-position: center;
+    /* Centrado */
 }
 
 #divisionuno a {
