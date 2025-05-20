@@ -170,20 +170,6 @@ h2 {
 }
 
 
-
-
-
-
-#divisionuno:hover {
-    width: 52%;
-    transition: 0.5s;
-}
-
-#divisiondos:hover {
-    width: 52%;
-    transition: 0.5s;
-}
-
 .negro:hover {
     background-color: rgba(0, 0, 0, 0);
 }
