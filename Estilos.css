@@ -128,40 +128,51 @@ h2 {
     display: flex;
 }
 
-#divisionuno {
-    height: 100%;
-    width: 50%;
-    background: url(diseño3.png);
-    background-repeat: round;
-    background-size: cover;
-    /* Mejor cobertura */
-    background-position: center;
-    /* Centrado */
+/* --- Ajustes para sección LO ÚLTIMO EN BOLSOS --- */
+#totality {
+    width: 100%;
+    margin: 0 auto;
 }
 
-#divisiondos {
-    height: 100%;
-    width: 50%;
-    background: url(zendaya.jpg);
-    background-repeat: round;
-    background-size: cover;
-    /* Mejor cobertura */
-    background-position: center;
-    /* Centrado */
+#divisionuno {
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 59, 5); /* color verde oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#divisionuno a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
 }
 
 .negro {
-    background-color: rgba(0, 0, 0, 0.550);
-    height: 100%;
+    background-color: transparent; /* sin overlay oscura */
+    color: white;
     width: 100%;
-    transition: 0.5s;
-    display: flex;
-    /* Para centrar contenido */
-    align-items: center;
-    /* Centrado vertical */
-    justify-content: center;
-    /* Centrado horizontal */
 }
+
+.centado {
+    margin: 0 auto;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
 
 #divisionuno:hover {
     width: 52%;
@@ -177,20 +188,7 @@ h2 {
     background-color: rgba(0, 0, 0, 0);
 }
 
-.centado {
-    position: relative;
-    width: 80%;
-    /* Más ancho para móviles */
-    max-width: 300px;
-    margin: 0 auto;
-    /* Centrado automático */
-    text-align: center;
-    font-size: 1.2rem;
-    /* Unidades relativas */
-    padding: 10px;
-    background-color: #D8C9B6;
-    border-radius: 20px;
-}
+
 
 /* --------------------------pagina productos------------------------- */
 #mainproductos {
