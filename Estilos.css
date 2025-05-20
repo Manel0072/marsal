@@ -316,12 +316,32 @@ h2 {
         display: block;
         height: auto;
         /* Altura automática en móviles */
+
+        #divisionuno,
+    #divisiondos {
+        height: 50vh;
+        /* Mitad de la altura de la pantalla */
+        width: 100%;
+        background-position: center;
+    }
+
+    #divisiondos {
+        background: url(zendaya2.jpg);
+        background-size: cover;
+        background-position: center;
+    }
     }
 
 
     .negro {
         background-color: rgba(0, 0, 0, 0.3);
         /* Mantener algo de overlay para legibilidad */
+    }
+
+    #divisionuno:hover,
+    #divisiondos:hover {
+        width: 100%;
+        /* No cambiar ancho en hover */
     }
 
     .centado {
